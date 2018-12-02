@@ -1,8 +1,4 @@
 #!/usr/bin/env ruby
 open("data-day1.txt") do |file|
-  final_frequency = 0
-  file.each do |line|
-    final_frequency += line.to_i
-  end
-  puts final_frequency
+  puts file.map{ |line| line.to_i }.reduce(0, :+)
 end
