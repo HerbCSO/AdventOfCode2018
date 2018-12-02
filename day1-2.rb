@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
-require 'awesome_print'
-
 frequencies = Hash.new { |k, v| k = k; v = 0 }
-# frequencies[0] += 1
 current_frequency = 0
 iteration = 0
 while true do
@@ -14,7 +11,6 @@ while true do
       frequencies[current_frequency] += 1
       if frequencies[current_frequency] > 1
         puts "******* RESULT: #{current_frequency} *******"
-        found = true
         exit
       end
     end
