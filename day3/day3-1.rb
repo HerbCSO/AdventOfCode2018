@@ -27,4 +27,4 @@ open(ARGV[0]) do |file|
   end
 end
 pp fabric.take(100)
-puts fabric.select { |coords, assigned| assigned.length > 1 }.length
+puts fabric.select { |_coords, assigned| assigned.length > 1 }.length
