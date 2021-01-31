@@ -27,5 +27,5 @@ open(ARGV[0]) do |file|
   end
 end
 assignments = fabric.values.flatten.uniq
-dupes = fabric.select { |coords, assigned| assigned.length > 1 }.values.flatten.uniq
+dupes = fabric.select { |_coords, assigned| assigned.length > 1 }.values.flatten.uniq
 puts assignments - dupes

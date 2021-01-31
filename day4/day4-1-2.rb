@@ -37,9 +37,9 @@ open(ARGV[0]) do |file|
     end
   end
 end
-guard_asleep_longest = guard_asleep_minutes.select{ |k, v| v == guard_asleep_minutes.values.max }.first.first
+guard_asleep_longest = guard_asleep_minutes.select{ |_k, v| v == guard_asleep_minutes.values.max }.first.first
 guard_asleep_most = guard_asleep_at[guard_asleep_longest]
-guard_asleep_most_minute = guard_asleep_most.select{ |k, v| v == guard_asleep_most.values.max }.first.first
+guard_asleep_most_minute = guard_asleep_most.select{ |_k, v| v == guard_asleep_most.values.max }.first.first
 puts guard_asleep_most_minute * guard_asleep_longest.to_i
-guard, minute = guard_asleep_at.map { |k, v| { k.to_i => v.max_by { |ki, vi| vi } } }.map{|e|e.first}.to_h.max_by { |k, v| v.last }
+guard, minute = guard_asleep_at.map { |k, v| { k.to_i => v.max_by { |_ki, vi| vi } } }.map{|e|e.first}.to_h.max_by { |_k, v| v.last }
 puts guard * minute.first

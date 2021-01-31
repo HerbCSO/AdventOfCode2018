@@ -30,7 +30,7 @@ max_y = coords.max_by {|e| e.y}.y
 grid = Array.new(max_y - min_y + 1) { Array.new(max_x - min_x + 1) }
 # pp grid
 grid.each_with_index do |col, y|
-  col.each_with_index do |row, x|
+  col.each_with_index do |_row, x|
     coord_distances = 0
     coords.each do |coord|
       coord_distances += distance_to(x + min_x, y + min_y, coord).distance
